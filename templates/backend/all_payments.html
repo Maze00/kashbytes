@@ -1,0 +1,58 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}All Payments{% endblock %}
+
+{% block body %}
+    <section style="margin-top: 50px;margin-bottom: 100px;">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">User</th>
+                <th scope="col">Cash</th>
+                <th scope="col">Coins</th>
+                <th scope="col">Date & Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for payment in payments %}
+                <tr>
+                    <th scope="row">
+                        <img
+                            src="https://img.icons8.com/plasticine/2x/book.png"
+                            alt=""
+                            width="25"
+                            height="20"
+                        >
+                    </th>
+                    <th scope="row">{{ payment.user.username }}</th>
+                    <td>{{ payment.user_cash }} BDT</td>
+                    <td>${{ payment.user_coins }}</td>
+                    <td>{{ payment.created_at }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% if payments.has_other_pages %}
+            <ul class="pagination">
+                {% if payments.has_previous %}
+                    <li><a href="?page={{ payments.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in payments.paginator.page_range %}
+                    {% if payments.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if payments.has_next %}
+                    <li><a href="?page={{ payments.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </section>
+{% endblock %}

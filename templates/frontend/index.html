@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Kashbytes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<div class="fixed">
+    <img id="highlight" src="{% static 'frontend/img/logo.png' %}">
+
+
+    <button class="button button1" style="float:right; margin-right: 5vh; margin-top:4vh;"><a
+            href="{% url 'user_login' %}">Log in</a></button>
+    <button class="button button2" style="float:right;margin-top:4vh;" id="link"> Request Referral</button>
+
+    <button class="signup"></button>
+    <hr noshade="noshade">
+</div>
+<div class="blue">
+    <h5 id="lorem"><strong id="problem0">Make money. Make a difference.</strong> <br><br>
+        Welcome to Kashbytes, where you send out affiliate links and earn cash. When you join Kasbytes, you become a
+        part of a community of people invested in helping entrepreneurs with high potential to bring positive changes to
+        our society. The more people you invite, the more resources we dedicate towards developing that project. Join a
+        network of thousands of people and start earning today.<br>
+
+        <br>Watch the video to learn how Kashbytes works
+
+
+    </h5>
+    <iframe id="youtube" src="https://www.youtube.com/embed/https://youtu.be/mli5roiIW-s"></iframe>
+</div>
+
+<div class="one">
+
+    <img id="image1" src="{% static 'frontend/img/finals.png' %}">
+
+
+    <p id="redo1"><strong id="problem1">Be a Part of the Change</strong><br><br>Kashbytes comes with a sophisticated
+        financial system that aims to solve the problem of wealth gap in today’s world. Thousands of people use
+        Kashbytes everyday, challenging the status quo and changing conventional methods of cash flow.
+    </p></div>
+<div class="second">
+    <img id=image2 src="{% static 'frontend/img/final2.png ' %}">
+
+    <p id="diffrent"><strong id="problem2">Earn in 3 simple steps.</strong><br><br>
+
+        - Get an invite or request for one<br>
+        - Deposit 1800 BDT and activate your account<br>
+        - Start sending links and and earn<br><br>
+        To learn more click here (Learn More link)
+    </p>
+</div>
+<div class="third">
+    <img id="image3" src="{% static 'frontend/img/final3.jpg' %}">
+
+    <p id="text"><strong id="problem3">For Today and for Tomorrow </strong><br><br>
+        A portion of Kashbytes funds go to funding underrepresented entrepreneurs with high potential. Keep an eye on
+        our website as we release updates on our latest developments from that project.
+    </p>
+</div>
+<div>
+    <img src="{% static 'frontend/img/quote.png' %}" id="quote">
+</div>
+<footer>
+    <div class="foot">
+        <button class="button button1"><a href="">About Us</a></button>
+        <button class="button button2"><a href=""> Learn more</a></button>
+    </div>
+</footer>
+
+
+<section class="modal2">
+    <div class="background2"><img src="{% static 'frontend/img/backgroundmodal.png' %}"></div>
+    <div class="box202">
+        <div class="content101">
+            <h4>{{ email_form.email_address.label }}</h4>
+            <form method="post">{% csrf_token %}
+                <i class="far fa-times-circle" id="close2"></i>
+        </div>
+        {{ email_form.email_address }}</br>
+        <button type="submit"> Submit</button>
+        </form>
+    </div>
+</section>
+{% if email_form.email_address.errors %}
+    <script>
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "{{ email_form.email_address.errors }}",
+        })
+    </script>
+{% endif %}
+{% for message in messages %}
+    {% if 'request_url_sent_success' in message.tags %}
+        <script>
+            swal({
+                position: 'top-end',
+                icon: 'success',
+                title: "{{message}}",
+                showConfirmButton: false
+            })
+        </script>
+    {% endif %}
+    {% if "request_url_sent_error" in message.tags %}
+        <script>
+            swal({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ message }}",
+            })
+        </script>
+    {% endif %}
+{% endfor %}
+<script src="{% static 'frontend/js/java2.js' %}"></script>
+</body>

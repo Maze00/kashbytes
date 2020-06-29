@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WALLET</title>
+    <link rel="stylesheet" href="{% static 'frontend/' %}css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css"
+          integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://fedena.com/blog/wp-content/uploads/2019/11/Dollar-USD-icon.png"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<style>
+    li {
+        list-style: none;
+    }
+</style>
+<body>
+<body>
+<nav>
+    <div class="burger" id="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <h4>
+        <div class="svghead">
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1022.78 384.86">
+                <defs>
+                    <style>.cls-1 {
+                        fill: #0e2045;
+                    }
+
+                    .cls-2 {
+                        fill: #fff;
+                    }</style>
+                </defs>
+                <WallTitle>Asset 1</WallTitle>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="cls-1"
+                              d="M376.48,123.78l35.16-3.42q3.17,17.7,12.88,26t26.18,8.3q17.46,0,26.31-7.38T485.86,130a16.25,16.25,0,0,0-3.73-10.8q-3.72-4.45-13-7.75-6.35-2.19-28.93-7.81-29.06-7.2-40.77-17.7Q383,71.17,383,49.93a46.08,46.08,0,0,1,7.75-25.58Q398.46,12.46,413,6.23T448.26,0Q482,0,499,14.77T516.86,54.2l-36.13,1.59Q478.41,42,470.78,36t-22.89-6q-15.74,0-24.65,6.47a13,13,0,0,0-5.74,11.11,13.74,13.74,0,0,0,5.37,10.86q6.84,5.74,33.2,12t39,12.88a50.27,50.27,0,0,1,19.78,18.19q7.14,11.53,7.14,28.5a52.74,52.74,0,0,1-8.54,28.81,51.25,51.25,0,0,1-24.17,20q-15.63,6.53-38.95,6.53-33.93,0-52.12-15.69T376.48,123.78Z"/>
+                        <path class="cls-1"
+                              d="M552.51,182V3.05h36.13V73.49h70.8V3.05h36.13V182H659.44V103.76h-70.8V182Z"/>
+                        <path class="cls-1"
+                              d="M447.22,381.69V306.37L381.66,202.73H424l42.12,70.81,41.26-70.81H549L483.23,306.62v75.07Z"/>
+                        <path class="cls-1" d="M607.25,381.69V233h-53.1V202.73H696.36V233h-53V381.69Z"/>
+                        <path class="cls-1"
+                              d="M719.68,381.69v-179H852.37V233H755.81v39.67h89.84v30.15H755.81v48.71h100v30.15Z"/>
+                        <path class="cls-1"
+                              d="M877.27,323.46,912.42,320q3.18,17.71,12.88,26t26.19,8.3q17.44,0,26.3-7.39t8.85-17.27a16.34,16.34,0,0,0-3.72-10.81q-3.72-4.44-13-7.75-6.34-2.19-28.93-7.81-29.06-7.2-40.77-17.7-16.49-14.78-16.48-36A46,46,0,0,1,891.49,224q7.75-11.91,22.34-18.13t35.22-6.23q33.69,0,50.72,14.77t17.88,39.43l-36.13,1.59q-2.32-13.8-9.95-19.84t-22.89-6q-15.75,0-24.66,6.47a13.06,13.06,0,0,0-5.74,11.11A13.72,13.72,0,0,0,923.66,258q6.83,5.75,33.2,12t39,12.87a50.4,50.4,0,0,1,19.78,18.19q7.14,11.54,7.14,28.51a52.66,52.66,0,0,1-8.55,28.8,51.14,51.14,0,0,1-24.17,20q-15.63,6.54-38.94,6.53-33.93,0-52.12-15.68T877.27,323.46Z"/>
+                        <rect class="cls-1" y="4.13" width="377" height="377" rx="15"/>
+                        <path class="cls-2"
+                              d="M13,182V3.05H49.18V82.52l73-79.47h48.59l-67.38,69.7,71,109.26H127.67L78.47,98,49.18,127.93V182Z"/>
+                        <path class="cls-2"
+                              d="M366.47,182h-39.3l-15.63-40.65H240L225.24,182H186.91l69.7-179h38.21ZM300,111.21,275.29,44.8l-24.17,66.41Z"/>
+                        <path class="cls-2"
+                              d="M216.8,202.73h71.53q21.24,0,31.68,1.77a46.69,46.69,0,0,1,18.67,7.39,45.86,45.86,0,0,1,13.74,15,40.56,40.56,0,0,1,5.49,20.94,42.4,42.4,0,0,1-25.15,38.82q16.37,4.75,25.15,16.23t8.79,27A53.1,53.1,0,0,1,361,353.55,47.83,47.83,0,0,1,345.52,372q-9.82,6.88-24.23,8.48-9,1-43.58,1.22H216.8Zm36.13,29.79V273.9h23.68q21.12,0,26.25-.61,9.27-1.1,14.58-6.41t5.31-14q0-8.31-4.57-13.49t-13.61-6.29q-5.37-.62-30.89-.61Zm0,71.17v47.85h33.45q19.53,0,24.78-1.1a22.44,22.44,0,0,0,13.12-7.14q5.07-5.69,5.07-15.2a23.37,23.37,0,0,0-3.91-13.67,22.14,22.14,0,0,0-11.29-8.18q-7.38-2.56-32-2.56Z"/>
+                    </g>
+                </g>
+            </svg>
+
+        </div>
+
+
+    </h4>
+    <div class="navmenu1">
+        <ul>
+            <li id="blink">Within your first 3 days, invite 3 people and make them activate their accounts to get a
+                BONUS of 5 coins!
+            </li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Learn More</a></li>
+            <li><i class="far fa-user-circle"></i> <a href="">{{ user.username }}</a></li>
+        </ul>
+    </div>
+    <div class="navmenu2" id="navmenu2">
+        <ul class="all-links">
+            <li class="nav-links extra1 "><a href="{% url 'user_profile' %}"> <i class="far fa-user-circle"></i>ACCOUNT
+            </a></li>
+            <li class="nav-links1 extra1 "><a href="{% url 'tree' %}"><i class="fas fa-tree"></i>TREE</a></li>
+            <li class="nav-links1 extra1"><a href="{% url 'leader_board' %}"><i class="fas fa-user-alt"></i>LEADERBOARD</a>
+            </li>
+            <li class="nav-links1 extra1"><a href="{% url 'wallet' %}"><i class="fas fa-wallet"></i>WALLET</a></li>
+            <li class="nav-links1 extra1"><a href="{% url 'user_logout' %}"><i
+                    class="fas fa-sign-out-alt"></i>LOGOUT</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="WallAll">
+    <div class="WallTotalCoin">
+        <p class="WallCoinName">YOUR CURRENT COINS:</p>
+        <h4 class="WallCoins">
+            {% if coins and transfer_coins and received_coins is None %}
+                0
+            {% else %}
+                {{ total_joined_coins }}
+            {% endif %}
+        </h4>
+
+        <svg class="Wallsvg1" width="160" height="100" viewBox="0 0 772 396" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M397.75 221.5C378.901 221.5 362.133 219.848 347.445 216.543C332.758 213.238 323.089 209.077 318.438 204.059C335.083 207.853 353.688 209.75 374.25 209.75C389.305 209.75 403.594 208.71 417.119 206.629C430.644 204.548 441.568 201.672 449.891 198C458.214 194.328 462.375 190.411 462.375 186.25V174.5H468.25C471.799 175.234 474.645 176.734 476.787 178.998C478.929 181.262 480 183.68 480 186.25V198C480 202.284 476.328 206.231 468.984 209.842C461.641 213.452 451.665 216.298 439.059 218.379C426.452 220.46 412.682 221.5 397.75 221.5ZM386 174.5C374.128 174.5 363.234 173.857 353.32 172.572C343.406 171.287 335.512 169.757 329.637 167.982C323.762 166.208 318.774 164.311 314.674 162.291C310.574 160.271 307.728 158.527 306.137 157.059C304.546 155.59 303.75 154.549 303.75 153.938V146.777C309.992 151.428 320.763 155.253 336.062 158.252C351.362 161.251 368.008 162.75 386 162.75C403.992 162.75 420.638 161.251 435.938 158.252C451.237 155.253 462.008 151.428 468.25 146.777V151C468.25 155.161 464.578 159.048 457.234 162.658C449.891 166.269 439.915 169.145 427.309 171.287C414.702 173.429 400.932 174.5 386 174.5ZM386 151C371.068 151 357.298 149.929 344.691 147.787C332.085 145.645 322.109 142.769 314.766 139.158C307.422 135.548 303.75 131.631 303.75 127.408C303.75 123.186 307.422 119.269 314.766 115.658C322.109 112.048 332.085 109.202 344.691 107.121C357.298 105.04 371.068 104 386 104C400.932 104 414.702 105.04 427.309 107.121C439.915 109.202 449.891 112.048 457.234 115.658C464.578 119.269 468.25 123.186 468.25 127.408C468.25 131.631 464.578 135.548 457.234 139.158C449.891 142.769 439.915 145.645 427.309 147.787C414.702 149.929 400.932 151 386 151ZM297.875 162.75C297.875 166.911 302.036 170.828 310.359 174.5C318.682 178.172 329.606 181.048 343.131 183.129C356.656 185.21 370.945 186.25 386 186.25C399.708 186.25 412.805 185.363 425.289 183.588C437.773 181.813 448.177 179.396 456.5 176.336C456.378 176.581 456.163 176.979 455.857 177.529C455.551 178.08 454.603 179.09 453.012 180.559C451.421 182.027 449.493 183.435 447.229 184.781C444.964 186.128 441.66 187.658 437.314 189.371C432.969 191.085 428.074 192.523 422.627 193.686C417.18 194.848 410.234 195.858 401.789 196.715C393.344 197.572 384.164 198 374.25 198C359.318 198 345.548 196.929 332.941 194.787C320.335 192.645 310.359 189.769 303.016 186.158C295.672 182.548 292 178.661 292 174.5V162.75C292 159.812 293.958 156.936 297.875 154.121V162.75ZM297.875 224.621V233.25C297.875 237.411 302.036 241.328 310.359 245C318.682 248.672 329.606 251.548 343.131 253.629C356.656 255.71 370.945 256.75 386 256.75C399.464 256.75 412.407 255.893 424.83 254.18C437.253 252.466 447.688 250.079 456.133 247.02C454.297 253.139 445.546 258.249 429.879 262.35C414.212 266.45 395.669 268.5 374.25 268.5C359.318 268.5 345.548 267.46 332.941 265.379C320.335 263.298 310.359 260.452 303.016 256.842C295.672 253.231 292 249.284 292 245V233.25C292 230.312 293.958 227.436 297.875 224.621ZM397.75 233.25C411.336 233.25 424.34 232.363 436.764 230.588C449.187 228.813 459.56 226.396 467.883 223.336C466.169 229.456 457.479 234.596 441.812 238.758C426.146 242.919 407.542 245 386 245C371.068 245 357.298 243.96 344.691 241.879C332.085 239.798 322.109 236.952 314.766 233.342C307.422 229.731 303.75 225.784 303.75 221.5V209.75C303.75 207.057 305.525 204.303 309.074 201.488C310.91 202.1 312.501 202.59 313.848 202.957C311.522 205.283 310.359 207.547 310.359 209.75C310.359 213.911 314.46 217.828 322.66 221.5C330.861 225.172 341.693 228.048 355.156 230.129C368.62 232.21 382.818 233.25 397.75 233.25ZM462.375 256.75V248.121C466.292 250.936 468.25 253.812 468.25 256.75V268.5C468.25 272.784 464.578 276.731 457.234 280.342C449.891 283.952 439.915 286.798 427.309 288.879C414.702 290.96 400.932 292 386 292C364.458 292 345.854 289.919 330.188 285.758C314.521 281.596 305.831 276.456 304.117 270.336C312.44 273.396 322.813 275.813 335.236 277.588C347.66 279.363 360.664 280.25 374.25 280.25C389.305 280.25 403.594 279.21 417.119 277.129C430.644 275.048 441.568 272.172 449.891 268.5C458.214 264.828 462.375 260.911 462.375 256.75Z"
+                  fill="#0E2045"/>
+        </svg>
+
+
+    </div>
+
+    <div class="popup" id="transfer101">
+        <a href="#"> <i id="icontransfer" class="far fa-times-circle"></i> </a>
+        <p>Your transfer was Successful</p>
+        <button id="icontransfer">Okay</button>
+    </div>
+
+
+    <div class="popup" id="buy101">
+        <a href="#"> <i id="iconbuy" class="far fa-times-circle"></i> </a>
+        <p>Your request is being processed within 24 hours</p>
+    </div>
+
+
+    <div class="popup" id="out101">
+        <a href="#"> <i id="iconout" class="far fa-times-circle"></i> </a>
+        <p>Your request is being processed within 24 hours</p>
+    </div>
+    <div class="WallTotalBox">
+        <div class="WallBackBox"></div>
+        <div class="WallTopBox">
+            <p class="WallTitle">TRANSFER <span class="tooltip"> <i class="far fa-question-circle"
+                                                                       style="font-size:14px;"></i> <span
+                    class="tooltiptext">Send as many coins as you want to any user. Simply enter the ID of the user to whom you want to send and enter the desired number of coins you want to transfer and hit SEND.</span> </span>
+            </p>
+
+            <form class="WallLevelForm" id="transfer" method="post">{% csrf_token %}
+
+                {{ coin_transfer_form.coins }}
+                {% if coin_transfer_form.coins.errors %}
+                    <div style="color: red">
+                        {{ coin_transfer_form.coins.errors }}
+                    </div>
+                {% endif %}
+                <label>TO</label>
+                {{ coin_transfer_form.to_id }}
+                {% if coin_transfer_form.to_id.errors %}
+                    <div style="color: red">
+                        {{ coin_transfer_form.to_id.errors }}
+                    </div>
+                {% endif %}
+                {% if user_level.review != False %}
+                    <button type="submit" id="send" name="transfer_coins">SEND</button>
+                    {% if transfer_error %}
+                        <div style="color: red">
+                            {{ transfer_error }}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </form>
+            {% if user_level.coins < 1 %}
+            <p class="WallTitle">PAY FOR ACTIVATION <span class="tooltip"> <i class="far fa-question-circle"
+                                                                               style="font-size:14px;"></i> <span
+                    class="tooltiptext">Buy coins by depositing the equivalent money in BDT to the given bKash number<br>
+            1 coin = 100 BDT <br>
+            After depositing the amount (in BDT to bKash) fill in the bKash Transaction ID. It might take 24 hours for us to verify it and to add the requested number of coins to your wallet.
+             </span> </span></p>
+            <form class="WallLevelForm" method="post">{% csrf_token %}
+                {{ buy_coin_form.bdt }}
+                <label>TO</label>
+                <input type="number" min=1 placeholder="01924017201" name="Input6" disabled>
+                {{ buy_coin_form.transaction_id }}
+                {% if user_level.has_paid == False %}
+                    <button type="submit" id="lastButton" name="pay_money">SEND</button>
+                {% else %}
+                    <span style="color: green">Payment is under review, will get back to you soon!</span>
+                {% endif %}
+                {% if user_level.level_over is True %}
+                    <span style="color: red">Must pay first to continue!</span>
+                {% endif %}
+                {% if buy_coin_form.transaction_id.errors %}
+                    <div style="color: red">
+                        {{ buy_coin_form.transaction_id.errors }}
+                    </div>
+                {% endif %}
+            </form>
+        {% endif %}
+            <p class="WallTitle">BUY COINS<span class="tooltip"> <i class="far fa-question-circle"
+                                                                                  style="font-size:14px;"></i> <span
+                    class="tooltiptext">Buy coins by depositing the equivalent money in BDT to the given bKash number<br>
+            1 coin = 100 BDT <br>
+            After depositing the amount (in BDT to bKash) fill in the bKash Transaction ID. It might take 24 hours for us to verify it and to add the requested number of coins to your wallet.
+             </span> </span></p>
+            <form class="WallLevelForm" method="post">{% csrf_token %}
+                {{ host_buy_form.bdt }}
+                {% if host_buy_form.bdt.errors %}
+                    <div style="color: red">
+                        {{ host_buy_form.bdt.errors }}
+                    </div>
+                {% endif %}
+                <label>TO</label>
+                <input type="number" min=1 placeholder="01924017201" name="Input6" disabled>
+                {{ host_buy_form.transaction_id }}
+                {% if user_level.review != False %}
+                    <button type="submit" id="lastButton" name="buy_coins_from_host">SEND</button>
+                {% endif %}
+                {% if host_buy_form.transaction_id.errors %}
+                    <div style="color: red">
+                        {{ host_buy_form.transaction_id.errors }}
+                    </div>
+                {% endif %}
+            </form>
+            <p class="WallTitle">CASH OUT <span class="tooltip"> <i class="far fa-question-circle"
+                                                                       style="font-size:14px;"></i> <span
+                    id="tooltiptext4" class="tooltiptext">Enter the number of coins you want to withdraw and enter a bKash number where we can send you the amount in BDT. Hit SEND. It might take up to 24 hours to send you the amount to your bKash.
+
+    </span> </span></p>
+            <form class="WallLevelForm" method="post">{% csrf_token %}
+                {{ cash_out_form.coins }}
+                {% if cash_out_form.coins.errors %}
+                    <div style="color: red">
+                        {{ cash_out_form.coins.errors }}
+                    </div>
+                {% endif %}
+                <label>TO</label>
+                {{ cash_out_form.number }}
+                {% if cash_out_form.number.errors %}
+                    <div style="color: red">
+                        {{ cash_out_form.number.errors }}
+                    </div>
+                {% endif %}
+                {% if user_level.review != False %}
+                    <button type="submit" id="out102" name="cash_out">SEND</button>
+                    {% if cash_out_error %}
+                        <div style="color: red">
+                            {{ cash_out_error }}
+                        </div>
+                    {% endif %}
+                    {% if same_date_error %}
+                        <div style="color: red">
+                            {{ same_date_error }}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </form>
+
+        </div>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+            {% if "review_message" in message.tags %}
+                <script>
+                    swal({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "{{message}}",
+                        showConfirmButton: false
+                    })
+                </script>
+            {% endif %}
+            {% if "cash_out_success" in message.tags %}
+                <script>
+                    swal({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "{{message}}",
+                        showConfirmButton: false
+                    })
+                </script>
+            {% endif %}
+            {% if "transfer_success" in message.tags %}
+                <script>
+                    swal({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "{{message}}",
+                        showConfirmButton: false
+                    })
+                </script>
+            {% endif %}
+            {% if "request_url_sent_error" in message.tags %}
+                <script>
+                    swal({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: "{{ message }}",
+                    })
+                </script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <script src="{% static 'frontend/' %}js/user-d-js.js"></script>
+    <script>
+
+        const form = document.querySelectorAll(".levelForm")
+        form.forEach(elem => elem.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const transfer = document.getElementById("send");
+            transfer.addEventListener("click", () => {
+                const popup = document.getElementById("transfer101")
+                popup.style.visibility = "visible";
+                const icon = document.getElementById("icontransfer");
+                icon.addEventListener("click", () => {
+                    popup.style.visibility = "hidden";
+                })
+            })
+
+            const buybutton = document.getElementById("lastButton");
+            buybutton.addEventListener("click", () => {
+                    const popup2 = document.getElementById("buy101")
+                    popup2.style.visibility = "visible"
+                    const icon2 = document.getElementById("iconbuy");
+                    icon2.addEventListener("click", () => {
+                        popup2.style.visibility = "hidden"
+                    })
+                }
+            )
+
+            const cashout = document.getElementById("out101");
+            const cashbutton = document.getElementById("out102");
+            cashbutton.addEventListener("click", () => {
+                    const popup3 = document.getElementById("out101")
+                    popup3.style.visibility = "visible"
+                    const icon3 = document.getElementById("iconout");
+                    icon3.addEventListener("click", () => {
+                        popup3.style.visibility = "hidden"
+                    })
+                }
+            )
+
+
+        }))
+
+    </script>
+
+</body>
+</html>

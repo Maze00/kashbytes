@@ -1,0 +1,50 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Buy Cash Details{% endblock %}
+
+{% block body %}
+    <section style="margin-top: 50px;margin-bottom: 100px;">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">STATUS</th>
+                <th scope="col">ID</th>
+                <th scope="col">CASH</th>
+                <th scope="col">COINS</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in applies_data %}
+                <tr>
+                    <th scope="row">
+                        {% if data.is_seen is False %}
+                            <img src="https://www.clker.com/cliparts/h/Q/q/N/u/3/bright-red-tick.svg" alt="" width="25">
+                        {% else %}
+                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_1280.png" alt="" width="25">
+                        {% endif %}
+                    </th>
+                    <th scope="row">{{ data.id }}</th>
+                    <td>{{ data.cash }} BDT</td>
+                    <td>$ {{ data.coins }}</td>
+                    <td>{{ data.activation_date }}</td>
+                    <td>
+                        {% if data.approve is not True %}
+                        <a href="/admin/approve-buying-from-host/{{ data.id }}/">
+                            <img src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_1280.png" alt="" width="25">
+                        </a>
+                        |
+                        <a href="/admin/disapprove-buying-from-host/{{ data.id }}/">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/No_sign_Right.svg/1200px-No_sign_Right.svg.png" alt="" width="25">
+                        </a>
+                        {% else %}
+                            --
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

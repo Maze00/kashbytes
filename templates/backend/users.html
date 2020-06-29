@@ -1,0 +1,76 @@
+{% extends 'backend/base.html' %}
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    <section style="margin-top: 50px">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Username</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Active</th>
+                <th scope="col">Called By</th>
+                <th scope="col">Joined Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in users %}
+                {% if not item.is_superuser is True %}
+                    <tr>
+                        <th scope="row">{{ item.id }}</th>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>
+                            {% if item.is_active is True %}
+                                <img src="https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-512.png"
+                                     alt="" width="20">
+                            {% else %}
+                                <img src="https://cdn2.iconfinder.com/data/icons/web-store-crayons-volume-1/256/Delete_Account-512.png"
+                                     alt="" width="20">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.call_by is None %}
+                                self
+                            {% else %}
+                            {{ item.call_by }}
+                            {% endif %}
+                        </td>
+                        <td>{{ item.date_joined }}</td>
+                        <td>
+                            <a href="/admin/user-details/{{ item.id }}/">
+                                <img src="https://img.icons8.com/carbon-copy/2x/view-details.png" alt="" width="25"
+                                     title="edit and details">
+                            </a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if users.has_other_pages %}
+            <ul class="pagination">
+                {% if users.has_previous %}
+                    <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in users.paginator.page_range %}
+                    {% if users.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if users.has_next %}
+                    <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </section>
+{% endblock %}

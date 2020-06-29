@@ -1,0 +1,78 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Cash Out Request{% endblock %}
+
+{% block body %}
+    <section style="margin-top: 50px">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Coins</th>
+                <th scope="col">Cash</th>
+                <th scope="col">BKash</th>
+                <th scope="col">Username</th>
+                <th scope="col">Request On</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cash_out_request %}
+                <tr>
+                    <th>
+                        {% if item.is_done is False %}
+                            <img src="https://pngimage.net/wp-content/uploads/2018/05/check-png-red-6-256x200.png"
+                                 width="25">
+                        {% else %}
+                            <img src="https://www.festivalclaca.cat/imgfv/b/2-21085_checkmark-svg-right-clipart-tick.png"
+                                 width="25" alt="" title="Already seen">
+                        {% endif %}
+                    </th>
+                    <th scope="row">{{ item.coins }}</th>
+                    <td>{{ item.cash }} BDT</td>
+                    <td>{{ item.number }}</td>
+                    <td>{{ item.ask_by }}</td>
+                    <td>{{ item.ask_date }}</td>
+                    <td>
+                        {% if item.is_approve is True %}
+                            APPROVED
+                        {% elif item.is_approve is False %}
+                            DISAPPROVED
+                        {% else %}
+                            <a href="/admin/cash-out-approve/{{ item.id }}/">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Approve_icon.svg/1024px-Approve_icon.svg.png"
+                                     alt="" width="25" title="approve">
+                            </a>|
+                            <a href="/admin/cash-out-refuse/{{ item.id }}/">
+                                <img src="https://i.ya-webdesign.com/images/accept-and-reject-buttons-png-10.png" alt=""
+                                     width="25" title="reject">
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if cash_out_request.has_other_pages %}
+            <ul class="pagination">
+                {% if cash_out_request.has_previous %}
+                    <li><a href="?page={{ cash_out_request.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in cash_out_request.paginator.page_range %}
+                    {% if cash_out_request.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if cash_out_request.has_next %}
+                    <li><a href="?page={{ cash_out_request.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </section>
+{% endblock %}

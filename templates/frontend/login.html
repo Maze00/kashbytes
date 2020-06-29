@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <img class="LogImage3" src="{% static 'frontend/img/sign_up_final.png' %}">
+    
+<div class="LogFullBody">
+    <img class="LogImage1"src="{% static 'frontend/img/kashbytes_logo_transparentbg.png' %}">
+    <img class="LogImage2" src="{% static 'frontend/sign_up_final.png' %}">
+    <div class="LogImgtext">
+        
+        <ul>
+            <li>Pay 1800 BDT to enter and that's all you EVER pay </li>
+            <li>Send affiliate links to friends and family inviting them to join and earn coins!</li>
+            <li>Make real money and use your coins in the real world</li>
+            <li>Keep earning more as you invite more people. The sky is the limit! </li>
+        </ul>
+    </div>
+<h1 class="LogHead">Login</h1>
+<div class="LogFullForm"> 
+    <form class="LogLevelForm" method="post">{% csrf_token %}
+        <div>
+            <label for="name">{{ login_form.user.label }}</label>
+        </div>
+        <div>
+            {{ login_form.user }}
+        </div>
+        <div>
+            <label for="Password">{{ login_form.password.label }}</label>
+        </div>
+        <div>
+            {{ login_form.password }}
+        </div>
+        
+        <div class="LogLink">
+            <a href="{% url 'forgot_password' %}">Forgot Password?</a>
+        </div> 
+        <button type="submit">Login</button>
+</form>
+    {% if error_msg %}
+        <div style="color: red">
+            {{ error_msg }}
+        </div>
+    {% endif %}
+</div>
+</div>  
+{% if messages %}
+    {% for message in messages %}
+        {% if "registration_success" in message.tags %}
+            <script>
+                swal({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "{{message}}",
+                    showConfirmButton: false
+                })
+            </script>
+        {% endif %}
+        {% if 'password_change_success' in message.tags %}
+            <script>
+                swal({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "{{message}}",
+                    showConfirmButton: false
+                })
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</body> 
+</html>

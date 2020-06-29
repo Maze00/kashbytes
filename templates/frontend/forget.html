@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+</style>
+<body>
+<div class="ForgetFullbody">
+
+    <div class="ForgetBox">
+        <a href="#"> <i class="far fa-times-circle"></i> </a>
+        <h3>Find your account</h3>
+
+
+        <p>Enter your email to reset your password:</p>
+        <div class="ForgetHeadless">
+            <form method="post">{% csrf_token %}
+                <div>
+                    {{ email_form.email.label }}
+                </div>
+                <div>
+                    {{ email_form.email }}
+                </div>
+                {% if email_form.email.errors %}
+                <div style="color: red">
+                    {{ email_form.email.errors }}
+                </div>
+                {% endif %}
+                <div>
+                    <button type="submit">Send Me</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% for message in messages %}
+    {% if 'request_url_sent_success' in message.tags %}
+        <script>
+            Swal({
+                position: 'top-end',
+                icon: 'success',
+                title: "{{message}}",
+                showConfirmButton: false
+            })
+        </script>
+    {% endif %}
+    {% if "request_url_sent_error" in message.tags %}
+        <script>
+            swal({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ message }}",
+            })
+        </script>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

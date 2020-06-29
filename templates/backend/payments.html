@@ -1,0 +1,120 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}All Payments{% endblock %}
+
+{% block body %}
+    <section style="margin-top: 50px">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Username</th>
+                <th scope="col">Transaction ID (BKash)</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Coins</th>
+                <th scope="col">User Level</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in all %}
+                <tr>
+                    <th>
+                        {% if item.review == False %}
+                            <img src="https://pngimage.net/wp-content/uploads/2018/05/check-png-red-6-256x200.png"
+                                 width="25">
+                        {% else %}
+                            <img src="https://www.downloadclipart.net/medium/19943-check-mark-button-clip-art.png"
+                                 width="25" alt="" title="Already seen">
+                        {% endif %}
+                    </th>
+                    <th scope="row">{{ item.user }}</th>
+                    <td>{{ item.transaction_id }}</td>
+                    <td>{{ item.pay_by_user }} BDT</td>
+                    <td>{{ item.coins }}</td>
+                    <td>
+                        {% if item.user_level == 0 %}
+                            <span style="color: red">No Level</span>
+                        {% elif item.user_level == 1 %}
+                            <span style="color: green">Level One</span>
+                        {% elif item.user_level == 2 %}
+                            <span style="color: green">Level Two</span>
+                        {% elif item.user_level == 3 %}
+                            <span style="color: green">Level Three</span>
+                        {% elif item.user_level == 4 %}
+                            <span style="color: green">Level Four</span>
+                        {% elif item.user_level == 5 %}
+                            <span style="color: green">Level Five</span>
+                        {% elif item.user_level == 6 %}
+                            <span style="color: green">Level Six</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.review is not True %}
+                            <a href="/admin/payment-approve/{{ item.user_id }}/">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Approve_icon.svg/1024px-Approve_icon.svg.png"
+                                     alt="" width="25" title="approve" onclick="return is_approve()">
+                            </a>|
+                            <a href="/admin/payment-disapprove/{{ item.user_id }}/">
+                                <img src="https://i.ya-webdesign.com/images/accept-and-reject-buttons-png-10.png" alt=""
+                                     width="25" title="reject" onclick="return is_reject()">
+                            </a>
+                        {% else %}
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Approve_icon.svg/1024px-Approve_icon.svg.png"
+                                 alt="" width="25" title="done">
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if all.has_other_pages %}
+            <ul class="pagination">
+                {% if all.has_previous %}
+                    <li><a href="?page={{ all.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in all.paginator.page_range %}
+                    {% if all.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if all.has_next %}
+                    <li><a href="?page={{ all.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </section>
+    <script type="text/javascript">
+        function is_approve() {
+            {
+                let x = confirm("Are you sure you want to approve?");
+                if (x) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+        }
+
+        function is_reject() {
+            {
+                let x = confirm("Are you sure you want to approve?");
+                if (x) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+        }
+    </script>
+{% endblock %}

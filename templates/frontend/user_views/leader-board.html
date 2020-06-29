@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEADERBOARD</title>
+    <link rel="stylesheet" href="{% static 'frontend/' %}css/main.css"/>
+    <link rel="icon" href="{% static 'frontend/' %}SED.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
+    <link rel="icon" href="https://fedena.com/blog/wp-content/uploads/2019/11/Dollar-USD-icon.png"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<nav>
+    <div class="burger" id="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <h4>
+        <div class="svghead">
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1022.78 384.86">
+                <defs>
+                    <style>.cls-1 {
+                        fill: #0e2045;
+                    }
+
+                    .cls-2 {
+                        fill: #fff;
+                    }</style>
+                </defs>
+                <title>Asset 1</title>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="cls-1"
+                              d="M376.48,123.78l35.16-3.42q3.17,17.7,12.88,26t26.18,8.3q17.46,0,26.31-7.38T485.86,130a16.25,16.25,0,0,0-3.73-10.8q-3.72-4.45-13-7.75-6.35-2.19-28.93-7.81-29.06-7.2-40.77-17.7Q383,71.17,383,49.93a46.08,46.08,0,0,1,7.75-25.58Q398.46,12.46,413,6.23T448.26,0Q482,0,499,14.77T516.86,54.2l-36.13,1.59Q478.41,42,470.78,36t-22.89-6q-15.74,0-24.65,6.47a13,13,0,0,0-5.74,11.11,13.74,13.74,0,0,0,5.37,10.86q6.84,5.74,33.2,12t39,12.88a50.27,50.27,0,0,1,19.78,18.19q7.14,11.53,7.14,28.5a52.74,52.74,0,0,1-8.54,28.81,51.25,51.25,0,0,1-24.17,20q-15.63,6.53-38.95,6.53-33.93,0-52.12-15.69T376.48,123.78Z"/>
+                        <path class="cls-1"
+                              d="M552.51,182V3.05h36.13V73.49h70.8V3.05h36.13V182H659.44V103.76h-70.8V182Z"/>
+                        <path class="cls-1"
+                              d="M447.22,381.69V306.37L381.66,202.73H424l42.12,70.81,41.26-70.81H549L483.23,306.62v75.07Z"/>
+                        <path class="cls-1" d="M607.25,381.69V233h-53.1V202.73H696.36V233h-53V381.69Z"/>
+                        <path class="cls-1"
+                              d="M719.68,381.69v-179H852.37V233H755.81v39.67h89.84v30.15H755.81v48.71h100v30.15Z"/>
+                        <path class="cls-1"
+                              d="M877.27,323.46,912.42,320q3.18,17.71,12.88,26t26.19,8.3q17.44,0,26.3-7.39t8.85-17.27a16.34,16.34,0,0,0-3.72-10.81q-3.72-4.44-13-7.75-6.34-2.19-28.93-7.81-29.06-7.2-40.77-17.7-16.49-14.78-16.48-36A46,46,0,0,1,891.49,224q7.75-11.91,22.34-18.13t35.22-6.23q33.69,0,50.72,14.77t17.88,39.43l-36.13,1.59q-2.32-13.8-9.95-19.84t-22.89-6q-15.75,0-24.66,6.47a13.06,13.06,0,0,0-5.74,11.11A13.72,13.72,0,0,0,923.66,258q6.83,5.75,33.2,12t39,12.87a50.4,50.4,0,0,1,19.78,18.19q7.14,11.54,7.14,28.51a52.66,52.66,0,0,1-8.55,28.8,51.14,51.14,0,0,1-24.17,20q-15.63,6.54-38.94,6.53-33.93,0-52.12-15.68T877.27,323.46Z"/>
+                        <rect class="cls-1" y="4.13" width="377" height="377" rx="15"/>
+                        <path class="cls-2"
+                              d="M13,182V3.05H49.18V82.52l73-79.47h48.59l-67.38,69.7,71,109.26H127.67L78.47,98,49.18,127.93V182Z"/>
+                        <path class="cls-2"
+                              d="M366.47,182h-39.3l-15.63-40.65H240L225.24,182H186.91l69.7-179h38.21ZM300,111.21,275.29,44.8l-24.17,66.41Z"/>
+                        <path class="cls-2"
+                              d="M216.8,202.73h71.53q21.24,0,31.68,1.77a46.69,46.69,0,0,1,18.67,7.39,45.86,45.86,0,0,1,13.74,15,40.56,40.56,0,0,1,5.49,20.94,42.4,42.4,0,0,1-25.15,38.82q16.37,4.75,25.15,16.23t8.79,27A53.1,53.1,0,0,1,361,353.55,47.83,47.83,0,0,1,345.52,372q-9.82,6.88-24.23,8.48-9,1-43.58,1.22H216.8Zm36.13,29.79V273.9h23.68q21.12,0,26.25-.61,9.27-1.1,14.58-6.41t5.31-14q0-8.31-4.57-13.49t-13.61-6.29q-5.37-.62-30.89-.61Zm0,71.17v47.85h33.45q19.53,0,24.78-1.1a22.44,22.44,0,0,0,13.12-7.14q5.07-5.69,5.07-15.2a23.37,23.37,0,0,0-3.91-13.67,22.14,22.14,0,0,0-11.29-8.18q-7.38-2.56-32-2.56Z"/>
+                    </g>
+                </g>
+            </svg>
+
+        </div>
+
+
+    </h4>
+    <div class="navmenu1">
+        <ul>
+            <li id="blink">Within your first 3 days, invite 3 people and make them activate their accounts to get a
+                BONUS of 5 coins!
+            </li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Learn More</a></li>
+            <li><i class="far fa-user-circle"></i> <a href="index.html">{{ user.username }}</a></li>
+        </ul>
+    </div>
+    <div class="navmenu2" id="navmenu2">
+        <ul class="all-links">
+            <li class="nav-links extra1 "><a href="{% url 'user_profile' %}"> <i class="far fa-user-circle"></i>ACCOUNT
+            </a></li>
+            <li class="nav-links1 extra1 "><a href="{% url 'tree' %}"><i class="fas fa-tree"></i>TREE</a></li>
+            <li class="nav-links1 extra1"><a href="{% url 'leader_board' %}"><i class="fas fa-user-alt"></i>LEADERBOARD</a>
+            </li>
+            <li class="nav-links1 extra1"><a href="{% url 'wallet' %}"><i class="fas fa-wallet"></i>WALLET</a></li>
+            <li class="nav-links1 extra1"><a href="{% url 'user_logout' %}"><i
+                    class="fas fa-sign-out-alt"></i>LOGOUT</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="leadFullBody">
+    <h1 class="leadh1">Leaderboard</h1>
+
+    <div class="leadBoxBody">
+        <div class="leadBackBox"></div>
+
+        <div class="leadTopBox">
+
+            <div class="leadCrown">
+                <svg width="606" height="263" viewBox="0 0 906 563" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M586.72 209.953L519.334 246.181L454.719 170.975C454.459 170.672 454.122 170.427 453.734 170.257C453.346 170.088 452.919 170 452.485 170C452.052 170 451.624 170.088 451.236 170.257C450.849 170.427 450.512 170.672 450.252 170.975L385.671 246.181L318.251 209.953C316.277 208.895 313.714 210.315 314.026 212.34L340.482 387.77C340.862 390.157 343.217 392 346.022 392H559.018C561.788 392 564.177 390.187 564.523 387.77L590.979 212.34C591.256 210.315 588.728 208.895 586.72 209.953ZM543.089 371.333H361.882L343.252 247.631L391.661 273.647L452.502 202.822L513.344 273.647L561.753 247.631L543.089 371.333ZM452.502 280.203C430.999 280.203 413.512 295.462 413.512 314.226C413.512 332.989 430.999 348.248 452.502 348.248C474.006 348.248 491.493 332.989 491.493 314.226C491.493 295.462 474.006 280.203 452.502 280.203ZM452.502 328.82C443.292 328.82 435.812 322.293 435.812 314.226C435.812 306.188 443.292 299.632 452.502 299.632C461.713 299.632 469.193 306.158 469.193 314.226C469.193 322.263 461.713 328.82 452.502 328.82Z"
+                          fill="white"/>
+                </svg>
+            </div>
+
+            <div class="leadTopAll">
+
+                <span class="leadTopSerial">1.</span>
+                <span class="leadTopper">Name1</span>
+
+                <p class="leadTopLevel"> Invited Users</p>
+            </div>
+
+            <div class="leadgolden">
+
+                <p class="leadTopCoins"><i class="fas fa-users"></i> 1000</p>
+
+            </div>
+
+
+        </div>
+        <div class="leadTablebox" style="overflow-x:auto;">
+
+            <table class="leadTable">
+                <tr>
+                    <td>ID</td>
+                    <td>USERNAME</td>
+                    <td>REFERS</td>
+                </tr>
+                {% for item in leader_board_winner %}
+                    <tr>
+                        <td>{{ item.user.id }}</td>
+                        <td>{{ item.user.username }}</td>
+                        <td>{{ item.refers }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+        <script src="{% static 'frontend/' %}js/user-d-js.js"></script>
+</body>
+</html>

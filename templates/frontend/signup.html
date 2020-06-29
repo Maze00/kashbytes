@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<style>
+    li{
+        list-style: none;
+        margin-left: 18px;
+    }
+</style>
+<body>
+    
+    <body>
+    
+        <img class="SignImage3" src="{% static 'frontend/img/sign_up_final.png' %}">
+        
+    <div class="SignFullBody">
+        <img class="SignImage1" src="{% static 'frontend/img/kashbytes_logo_transparentbg.png' %}">
+        <img class="SignImage2"src="{% static 'frontend/img/sign_up_final.png' %}">
+        <div class="SignImgtext">
+            
+            <ul>
+                <li>Pay 1800 BDT to enter and that's all you EVER pay </li>
+                <li>Send affiliate links to friends and family inviting them to join and earn coins!</li>
+                <li>Make real money and use your coins in the real world</li>
+                <li>Keep earning more as you invite more people. The sky is the limit! </li>
+            </ul>
+        </div>
+    <h1 class="SignHead">Sign Up Now!</h1>
+    <div class="SignfullForm"> 
+        <form class="SignLevelForm" method="post">{% csrf_token %}
+            <div>
+                <label for="name">{{ signup_form.username.label }}</label>
+            </div>
+            <div>
+                {{ signup_form.username }}
+            </div>
+            {% if signup_form.username.errors %}
+                <div style="color: red">
+                    {{ signup_form.username.errors }}
+                </div>
+            {% endif %}
+            <div>
+                <label  for="Email">{{ signup_form.email.label }}</label>
+            </div>
+            <div>
+                {{ signup_form.email }}
+            </div>
+            {% if signup_form.email.errors %}
+                <div style="color: red">
+                    {{ signup_form.email.errors }}
+                </div>
+            {% endif %}
+            <div>
+                <label for="Password">{{ signup_form.password.label }}</label>
+            </div>
+            <div>
+                {{ signup_form.password }}
+                <div id ="message2"></div>
+            </div>
+            {% if signup_form.password.errors %}
+                <div style="color: red">
+                    {{ signup_form.password.errors }}
+                </div>
+            {% endif %}
+            
+            <div>
+                <div>
+                    <label for="Password">{{ signup_form.confirm_password.label }}</label>
+                </div>
+                <div>
+                    {{ signup_form.confirm_password }}
+                    <div id="message"></div>
+                </div>
+                {% if signup_form.confirm_password.errors %}
+                    <div style="color: red">
+                        {{ signup_form.confirm_password.errors }}
+                    </div>
+                {% endif %}
+                {% if signup_form.non_field_errors %}
+                  <div style="color: red">
+                    {% for err in signup_form.non_field_errors %}
+                        {{ err }}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+               
+                <div>
+                <label for="Number">{{ signup_form.mobile_number.label }}</label>
+            </div>
+            <div>
+                {{ signup_form.mobile_number }}
+            </div>
+            {% if signup_form.mobile_number.errors %}
+                <div style="color: red">
+                    {{ signup_form.mobile_number.errors }}
+                </div>
+            {% endif %}
+            <div>
+                <label for="DOB">{{ signup_form.date_of_birth.label }}</label>
+            </div>
+            <div>
+                {{ signup_form.date_of_birth }}
+            </div>
+            {% if signup_form.date_of_birth.errors %}
+                <div style="color: red">
+                    {{ signup_form.date_of_birth.errors }}
+                </div>
+            {% endif %}
+            <div>
+                <label for="Gender">{{ signup_form.gender.label }}</label>
+            </div>
+            <div>        
+                {{ signup_form.gender }}
+            </div>
+            {% if signup_form.gender.errors %}
+                <div style="color: red">
+                    {{ signup_form.gender.errors }}
+                </div>
+            {% endif %}
+    
+        <div class="SignCheckbox">
+            {{ signup_form.agreement }}
+            <label>I agree to all <a href="#">terms and conditions</a></label>
+        </div>
+            {% if signup_form.agreement.errors %}
+                <div style="color: red">
+                    {{ signup_form.agreement.errors }}
+                </div>
+            {% endif %}
+        <button onclick='check();' type="submit">Signup</button>
+    </form>
+    </div>
+    {% for message in messages %}
+        {% if "url_validation_error" in message.tags %}
+            <div style="color:red;">
+                {{ message }}
+            </div>
+        {% endif %}
+        {% if "registration_fail" in message.tags %}
+            <script>
+                swal({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "{{ message }}",
+                })
+             </script>
+        {% endif %}
+    {% endfor %}
+    </div>  
+<script>
+    var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = '**Passwords Match**';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = '**Password and Confirm Password doesnt match**';
+  }
+
+}
+
+    var check2 = function(){
+        if(document.getElementById('password').value.length <= 7) {
+    
+    document.getElementById('message2').style.color = 'red';
+    document.getElementById('message2').innerHTML = '**Password must be minimum of 8 characters**';
+  } else {
+    
+    document.getElementById('message2').style.color = 'green';
+    document.getElementById('message2').innerHTML = ' ';
+  }
+    }
+</script>
+</body>
+</html>
